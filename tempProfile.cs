@@ -40,7 +40,6 @@ namespace EducationSystemApp {
                 InitProfiles();
             }
             profile = profiles.GetValueOrDefault("a")!;
-            Debug.WriteLine(profile.speedScore);
         }
 
 
@@ -52,7 +51,6 @@ namespace EducationSystemApp {
                 { "d", new tempProfile(5, 6, 7, 600) },
             };
             profile = profiles.GetValueOrDefault("a")!;
-            Debug.WriteLine(profile.speedScore);
         }
     }
 }

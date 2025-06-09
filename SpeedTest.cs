@@ -50,7 +50,7 @@ namespace EducationSystemApp {
             }
 
             // Keep testing until 10 tests complete AND THEN calculate score & reinit "stuff"
-            if (testsDone < 2) {
+            if (testsDone < 10) {
                 await GenerateNext();
             }
             else {
