@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -22,7 +23,7 @@ namespace EducationSystemApp {
             random = new Random();
         }
 
-        
+
         private async Task GenerateNext() {
             // Wait for button...
             await Task.Delay(random.Next(1000, 5000));
@@ -30,11 +31,11 @@ namespace EducationSystemApp {
             // Generate Button
             Button button = new Button();
             button.Size = new Size(random.Next(40, 80), random.Next(40, 80));
-            button.Location = new Point(random.Next(0,1200), random.Next(0, 640));
+            button.Location = new Point(random.Next(0, 1200), random.Next(0, 640));
             button.Text = "click?";
             button.Click += testButton_Click; // what is vs2022 trying to warn me about here?????????????
             this.Controls.Add(button);
-            
+
             // Start speed timer
             initalTime = DateTime.Now;
         }
@@ -65,6 +66,7 @@ namespace EducationSystemApp {
                 testsDone = 0;
                 totalTime = 0;
                 startButton.Visible = true;
+                resultTitle.Visible = true;
                 resultLabel.Visible = true;
             }
         }
@@ -72,6 +74,7 @@ namespace EducationSystemApp {
 
         private async void startButton_Click(object sender, EventArgs e) {
             startButton.Visible = false;
+            resultTitle.Visible = false;
             resultLabel.Visible = false;
             await GenerateNext();
         }

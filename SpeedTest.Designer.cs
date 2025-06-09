@@ -25,6 +25,7 @@
         private void InitializeComponent() {
             startButton = new Button();
             resultLabel = new Label();
+            resultTitle = new Label();
             SuspendLayout();
             // 
             // startButton
@@ -40,20 +41,32 @@
             // resultLabel
             // 
             resultLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            resultLabel.AutoSize = true;
-            resultLabel.Location = new Point(592, 298);
+            resultLabel.Location = new Point(575, 316);
             resultLabel.Name = "resultLabel";
-            resultLabel.Size = new Size(35, 15);
+            resultLabel.Size = new Size(75, 15);
             resultLabel.TabIndex = 1;
             resultLabel.Text = "score";
             resultLabel.TextAlign = ContentAlignment.MiddleCenter;
             resultLabel.Visible = false;
+            // 
+            // resultTitle
+            // 
+            resultTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            resultTitle.AutoSize = true;
+            resultTitle.Location = new Point(553, 301);
+            resultTitle.Name = "resultTitle";
+            resultTitle.Size = new Size(122, 15);
+            resultTitle.TabIndex = 2;
+            resultTitle.Text = "AVERAGE SPEED TIME";
+            resultTitle.TextAlign = ContentAlignment.MiddleCenter;
+            resultTitle.Visible = false;
             // 
             // SpeedTest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(resultTitle);
             Controls.Add(resultLabel);
             Controls.Add(startButton);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -67,5 +80,6 @@
 
         private Button startButton;
         private Label resultLabel;
+        private Label resultTitle;
     }
 }

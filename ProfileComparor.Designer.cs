@@ -33,6 +33,9 @@
             yourTotalScore = new Label();
             yourTitle = new Label();
             scoreTable = new TableLayoutPanel();
+            yourSpeedScore = new Label();
+            theirSpeedScore = new Label();
+            speedScoreTitle = new Label();
             theirWordScore = new Label();
             theirTotalScore = new Label();
             theirMemoryScore = new Label();
@@ -45,9 +48,6 @@
             compareInput = new TextBox();
             compareTitle = new Label();
             compareButton = new Button();
-            speedScoreTitle = new Label();
-            yourSpeedScore = new Label();
-            theirSpeedScore = new Label();
             scoreTable.SuspendLayout();
             SuspendLayout();
             // 
@@ -145,6 +145,42 @@
             scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
             scoreTable.Size = new Size(288, 205);
             scoreTable.TabIndex = 5;
+            // 
+            // yourSpeedScore
+            // 
+            yourSpeedScore.AutoSize = true;
+            yourSpeedScore.Dock = DockStyle.Fill;
+            yourSpeedScore.Location = new Point(96, 169);
+            yourSpeedScore.Margin = new Padding(0);
+            yourSpeedScore.Name = "yourSpeedScore";
+            yourSpeedScore.Size = new Size(96, 36);
+            yourSpeedScore.TabIndex = 14;
+            yourSpeedScore.Text = "speedScore";
+            yourSpeedScore.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // theirSpeedScore
+            // 
+            theirSpeedScore.AutoSize = true;
+            theirSpeedScore.Dock = DockStyle.Fill;
+            theirSpeedScore.Location = new Point(192, 169);
+            theirSpeedScore.Margin = new Padding(0);
+            theirSpeedScore.Name = "theirSpeedScore";
+            theirSpeedScore.Size = new Size(96, 36);
+            theirSpeedScore.TabIndex = 15;
+            theirSpeedScore.Text = "speedScore";
+            theirSpeedScore.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // speedScoreTitle
+            // 
+            speedScoreTitle.AutoSize = true;
+            speedScoreTitle.Dock = DockStyle.Fill;
+            speedScoreTitle.Location = new Point(0, 169);
+            speedScoreTitle.Margin = new Padding(0);
+            speedScoreTitle.Name = "speedScoreTitle";
+            speedScoreTitle.Size = new Size(96, 36);
+            speedScoreTitle.TabIndex = 13;
+            speedScoreTitle.Text = " AVERAGE  SPEED TIME";
+            speedScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // theirWordScore
             // 
@@ -280,42 +316,6 @@
             compareButton.Text = "COMPARE";
             compareButton.UseVisualStyleBackColor = true;
             compareButton.Click += compareButton_Click;
-            // 
-            // speedScoreTitle
-            // 
-            speedScoreTitle.AutoSize = true;
-            speedScoreTitle.Dock = DockStyle.Fill;
-            speedScoreTitle.Location = new Point(0, 169);
-            speedScoreTitle.Margin = new Padding(0);
-            speedScoreTitle.Name = "speedScoreTitle";
-            speedScoreTitle.Size = new Size(96, 36);
-            speedScoreTitle.TabIndex = 13;
-            speedScoreTitle.Text = "SPEED SCORE";
-            speedScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // yourSpeedScore
-            // 
-            yourSpeedScore.AutoSize = true;
-            yourSpeedScore.Dock = DockStyle.Fill;
-            yourSpeedScore.Location = new Point(96, 169);
-            yourSpeedScore.Margin = new Padding(0);
-            yourSpeedScore.Name = "yourSpeedScore";
-            yourSpeedScore.Size = new Size(96, 36);
-            yourSpeedScore.TabIndex = 14;
-            yourSpeedScore.Text = "speedScore";
-            yourSpeedScore.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // theirSpeedScore
-            // 
-            theirSpeedScore.AutoSize = true;
-            theirSpeedScore.Dock = DockStyle.Fill;
-            theirSpeedScore.Location = new Point(192, 169);
-            theirSpeedScore.Margin = new Padding(0);
-            theirSpeedScore.Name = "theirSpeedScore";
-            theirSpeedScore.Size = new Size(96, 36);
-            theirSpeedScore.TabIndex = 15;
-            theirSpeedScore.Text = "speedScore";
-            theirSpeedScore.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ProfileComparor
             // 
