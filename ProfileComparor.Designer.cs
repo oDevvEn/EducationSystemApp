@@ -45,6 +45,9 @@
             compareInput = new TextBox();
             compareTitle = new Label();
             compareButton = new Button();
+            speedScoreTitle = new Label();
+            yourSpeedScore = new Label();
+            theirSpeedScore = new Label();
             scoreTable.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,10 +55,10 @@
             // 
             yourMathScore.AutoSize = true;
             yourMathScore.Dock = DockStyle.Fill;
-            yourMathScore.Location = new Point(96, 49);
+            yourMathScore.Location = new Point(96, 41);
             yourMathScore.Margin = new Padding(0);
             yourMathScore.Name = "yourMathScore";
-            yourMathScore.Size = new Size(96, 38);
+            yourMathScore.Size = new Size(96, 32);
             yourMathScore.TabIndex = 0;
             yourMathScore.Text = "mathScore";
             yourMathScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -64,10 +67,10 @@
             // 
             yourMemoryScore.AutoSize = true;
             yourMemoryScore.Dock = DockStyle.Fill;
-            yourMemoryScore.Location = new Point(96, 87);
+            yourMemoryScore.Location = new Point(96, 73);
             yourMemoryScore.Margin = new Padding(0);
             yourMemoryScore.Name = "yourMemoryScore";
-            yourMemoryScore.Size = new Size(96, 38);
+            yourMemoryScore.Size = new Size(96, 32);
             yourMemoryScore.TabIndex = 1;
             yourMemoryScore.Text = "memoryScore";
             yourMemoryScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -76,10 +79,10 @@
             // 
             yourWordScore.AutoSize = true;
             yourWordScore.Dock = DockStyle.Fill;
-            yourWordScore.Location = new Point(96, 125);
+            yourWordScore.Location = new Point(96, 105);
             yourWordScore.Margin = new Padding(0);
             yourWordScore.Name = "yourWordScore";
-            yourWordScore.Size = new Size(96, 38);
+            yourWordScore.Size = new Size(96, 32);
             yourWordScore.TabIndex = 2;
             yourWordScore.Text = "wordScore";
             yourWordScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -88,10 +91,10 @@
             // 
             yourTotalScore.AutoSize = true;
             yourTotalScore.Dock = DockStyle.Fill;
-            yourTotalScore.Location = new Point(96, 163);
+            yourTotalScore.Location = new Point(96, 137);
             yourTotalScore.Margin = new Padding(0);
             yourTotalScore.Name = "yourTotalScore";
-            yourTotalScore.Size = new Size(96, 42);
+            yourTotalScore.Size = new Size(96, 32);
             yourTotalScore.TabIndex = 3;
             yourTotalScore.Text = "totalScore";
             yourTotalScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -103,7 +106,7 @@
             yourTitle.Location = new Point(96, 0);
             yourTitle.Margin = new Padding(0);
             yourTitle.Name = "yourTitle";
-            yourTitle.Size = new Size(96, 49);
+            yourTitle.Size = new Size(96, 41);
             yourTitle.TabIndex = 4;
             yourTitle.Text = "YOUR";
             yourTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -114,6 +117,9 @@
             scoreTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             scoreTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             scoreTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            scoreTable.Controls.Add(yourSpeedScore, 1, 5);
+            scoreTable.Controls.Add(theirSpeedScore, 2, 5);
+            scoreTable.Controls.Add(speedScoreTitle, 0, 5);
             scoreTable.Controls.Add(yourMathScore, 1, 1);
             scoreTable.Controls.Add(yourTitle, 1, 0);
             scoreTable.Controls.Add(yourMemoryScore, 1, 2);
@@ -130,12 +136,13 @@
             scoreTable.Controls.Add(totalScoreTitle, 0, 4);
             scoreTable.Location = new Point(12, 12);
             scoreTable.Name = "scoreTable";
-            scoreTable.RowCount = 5;
-            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 24F));
-            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 19F));
-            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 19F));
-            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 19F));
-            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 19F));
+            scoreTable.RowCount = 6;
+            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
+            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
+            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
+            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
+            scoreTable.RowStyles.Add(new RowStyle(SizeType.Percent, 16F));
             scoreTable.Size = new Size(288, 205);
             scoreTable.TabIndex = 5;
             // 
@@ -143,10 +150,10 @@
             // 
             theirWordScore.AutoSize = true;
             theirWordScore.Dock = DockStyle.Fill;
-            theirWordScore.Location = new Point(192, 125);
+            theirWordScore.Location = new Point(192, 105);
             theirWordScore.Margin = new Padding(0);
             theirWordScore.Name = "theirWordScore";
-            theirWordScore.Size = new Size(96, 38);
+            theirWordScore.Size = new Size(96, 32);
             theirWordScore.TabIndex = 6;
             theirWordScore.Text = "wordScore";
             theirWordScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -155,10 +162,10 @@
             // 
             theirTotalScore.AutoSize = true;
             theirTotalScore.Dock = DockStyle.Fill;
-            theirTotalScore.Location = new Point(192, 163);
+            theirTotalScore.Location = new Point(192, 137);
             theirTotalScore.Margin = new Padding(0);
             theirTotalScore.Name = "theirTotalScore";
-            theirTotalScore.Size = new Size(96, 42);
+            theirTotalScore.Size = new Size(96, 32);
             theirTotalScore.TabIndex = 7;
             theirTotalScore.Text = "totalScore";
             theirTotalScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -167,10 +174,10 @@
             // 
             theirMemoryScore.AutoSize = true;
             theirMemoryScore.Dock = DockStyle.Fill;
-            theirMemoryScore.Location = new Point(192, 87);
+            theirMemoryScore.Location = new Point(192, 73);
             theirMemoryScore.Margin = new Padding(0);
             theirMemoryScore.Name = "theirMemoryScore";
-            theirMemoryScore.Size = new Size(96, 38);
+            theirMemoryScore.Size = new Size(96, 32);
             theirMemoryScore.TabIndex = 5;
             theirMemoryScore.Text = "memoryScore";
             theirMemoryScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -179,10 +186,10 @@
             // 
             theirMathScore.AutoSize = true;
             theirMathScore.Dock = DockStyle.Fill;
-            theirMathScore.Location = new Point(192, 49);
+            theirMathScore.Location = new Point(192, 41);
             theirMathScore.Margin = new Padding(0);
             theirMathScore.Name = "theirMathScore";
-            theirMathScore.Size = new Size(96, 38);
+            theirMathScore.Size = new Size(96, 32);
             theirMathScore.TabIndex = 4;
             theirMathScore.Text = "mathScore";
             theirMathScore.TextAlign = ContentAlignment.MiddleCenter;
@@ -194,7 +201,7 @@
             theirTitle.Location = new Point(192, 0);
             theirTitle.Margin = new Padding(0);
             theirTitle.Name = "theirTitle";
-            theirTitle.Size = new Size(96, 49);
+            theirTitle.Size = new Size(96, 41);
             theirTitle.TabIndex = 8;
             theirTitle.Text = "THEIR";
             theirTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -203,10 +210,10 @@
             // 
             mathScoreTitle.AutoSize = true;
             mathScoreTitle.Dock = DockStyle.Fill;
-            mathScoreTitle.Location = new Point(0, 49);
+            mathScoreTitle.Location = new Point(0, 41);
             mathScoreTitle.Margin = new Padding(0);
             mathScoreTitle.Name = "mathScoreTitle";
-            mathScoreTitle.Size = new Size(96, 38);
+            mathScoreTitle.Size = new Size(96, 32);
             mathScoreTitle.TabIndex = 9;
             mathScoreTitle.Text = "MATH SCORE";
             mathScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -215,10 +222,10 @@
             // 
             memoryScoreTitle.AutoSize = true;
             memoryScoreTitle.Dock = DockStyle.Fill;
-            memoryScoreTitle.Location = new Point(0, 87);
+            memoryScoreTitle.Location = new Point(0, 73);
             memoryScoreTitle.Margin = new Padding(0);
             memoryScoreTitle.Name = "memoryScoreTitle";
-            memoryScoreTitle.Size = new Size(96, 38);
+            memoryScoreTitle.Size = new Size(96, 32);
             memoryScoreTitle.TabIndex = 10;
             memoryScoreTitle.Text = "MEMORY SCORE";
             memoryScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -227,10 +234,10 @@
             // 
             wordScoreTitle.AutoSize = true;
             wordScoreTitle.Dock = DockStyle.Fill;
-            wordScoreTitle.Location = new Point(0, 125);
+            wordScoreTitle.Location = new Point(0, 105);
             wordScoreTitle.Margin = new Padding(0);
             wordScoreTitle.Name = "wordScoreTitle";
-            wordScoreTitle.Size = new Size(96, 38);
+            wordScoreTitle.Size = new Size(96, 32);
             wordScoreTitle.TabIndex = 11;
             wordScoreTitle.Text = "WORD SCORE";
             wordScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -239,10 +246,10 @@
             // 
             totalScoreTitle.AutoSize = true;
             totalScoreTitle.Dock = DockStyle.Fill;
-            totalScoreTitle.Location = new Point(0, 163);
+            totalScoreTitle.Location = new Point(0, 137);
             totalScoreTitle.Margin = new Padding(0);
             totalScoreTitle.Name = "totalScoreTitle";
-            totalScoreTitle.Size = new Size(96, 42);
+            totalScoreTitle.Size = new Size(96, 32);
             totalScoreTitle.TabIndex = 12;
             totalScoreTitle.Text = "TOTAL SCORE";
             totalScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -273,6 +280,42 @@
             compareButton.Text = "COMPARE";
             compareButton.UseVisualStyleBackColor = true;
             compareButton.Click += compareButton_Click;
+            // 
+            // speedScoreTitle
+            // 
+            speedScoreTitle.AutoSize = true;
+            speedScoreTitle.Dock = DockStyle.Fill;
+            speedScoreTitle.Location = new Point(0, 169);
+            speedScoreTitle.Margin = new Padding(0);
+            speedScoreTitle.Name = "speedScoreTitle";
+            speedScoreTitle.Size = new Size(96, 36);
+            speedScoreTitle.TabIndex = 13;
+            speedScoreTitle.Text = "SPEED SCORE";
+            speedScoreTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // yourSpeedScore
+            // 
+            yourSpeedScore.AutoSize = true;
+            yourSpeedScore.Dock = DockStyle.Fill;
+            yourSpeedScore.Location = new Point(96, 169);
+            yourSpeedScore.Margin = new Padding(0);
+            yourSpeedScore.Name = "yourSpeedScore";
+            yourSpeedScore.Size = new Size(96, 36);
+            yourSpeedScore.TabIndex = 14;
+            yourSpeedScore.Text = "speedScore";
+            yourSpeedScore.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // theirSpeedScore
+            // 
+            theirSpeedScore.AutoSize = true;
+            theirSpeedScore.Dock = DockStyle.Fill;
+            theirSpeedScore.Location = new Point(192, 169);
+            theirSpeedScore.Margin = new Padding(0);
+            theirSpeedScore.Name = "theirSpeedScore";
+            theirSpeedScore.Size = new Size(96, 36);
+            theirSpeedScore.TabIndex = 15;
+            theirSpeedScore.Text = "speedScore";
+            theirSpeedScore.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ProfileComparor
             // 
@@ -311,5 +354,8 @@
         private TextBox compareInput;
         private Label compareTitle;
         private Button compareButton;
+        private Label speedScoreTitle;
+        private Label yourSpeedScore;
+        private Label theirSpeedScore;
     }
 }

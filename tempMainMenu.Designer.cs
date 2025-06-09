@@ -26,6 +26,7 @@
             speedTestButton = new Button();
             profileComparor = new Button();
             save = new Button();
+            load = new Button();
             SuspendLayout();
             // 
             // speedTestButton
@@ -50,7 +51,7 @@
             // 
             // save
             // 
-            save.Location = new Point(12, 70);
+            save.Location = new Point(15, 99);
             save.Name = "save";
             save.Size = new Size(127, 23);
             save.TabIndex = 2;
@@ -58,14 +59,26 @@
             save.UseVisualStyleBackColor = true;
             save.Click += save_Click;
             // 
+            // load
+            // 
+            load.Location = new Point(12, 70);
+            load.Name = "load";
+            load.Size = new Size(127, 23);
+            load.TabIndex = 3;
+            load.Text = "reload";
+            load.UseVisualStyleBackColor = true;
+            load.Click += load_Click;
+            // 
             // tempMainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(154, 108);
+            ClientSize = new Size(154, 139);
+            Controls.Add(load);
             Controls.Add(save);
             Controls.Add(profileComparor);
             Controls.Add(speedTestButton);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "tempMainMenu";
             Text = "tempMainMenu";
             ResumeLayout(false);
@@ -76,5 +89,6 @@
         private Button speedTestButton;
         private Button profileComparor;
         private Button save;
+        private Button load;
     }
 }

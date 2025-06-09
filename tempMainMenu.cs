@@ -14,15 +14,25 @@ namespace EducationSystemApp {
             InitializeComponent();
         }
 
-        private void speedTestButton_Click(object sender, EventArgs e) {
 
+        private void speedTestButton_Click(object sender, EventArgs e) {
+            this.Hide();
+            new SpeedTest().ShowDialog();
+            this.Show();
         }
+
 
         private void profileComparor_Click(object sender, EventArgs e) {
             this.Hide();
             new ProfileComparor().ShowDialog();
             this.Show();
         }
+
+
+        private void load_Click(object sender, EventArgs e) {
+            tempProfile.InitProfiles();
+        }
+
 
         private void save_Click(object sender, EventArgs e) {
             tempProfile.SaveProfiles();
