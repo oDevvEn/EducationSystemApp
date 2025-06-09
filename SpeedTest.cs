@@ -59,17 +59,20 @@ namespace EducationSystemApp {
                 if (speedScore < tempProfile.profile.speedScore) {
                     tempProfile.profile.speedScore = speedScore;
                 }
+                resultLabel.Text = speedScore.ToString();
 
                 // Reinit "stuff"
                 testsDone = 0;
                 totalTime = 0;
                 startButton.Visible = true;
+                resultLabel.Visible = true;
             }
         }
 
 
         private async void startButton_Click(object sender, EventArgs e) {
             startButton.Visible = false;
+            resultLabel.Visible = false;
             await GenerateNext();
         }
     }

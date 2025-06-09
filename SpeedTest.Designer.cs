@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             startButton = new Button();
+            resultLabel = new Label();
             SuspendLayout();
             // 
             // startButton
@@ -36,20 +37,35 @@
             startButton.UseVisualStyleBackColor = true;
             startButton.Click += startButton_Click;
             // 
+            // resultLabel
+            // 
+            resultLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            resultLabel.AutoSize = true;
+            resultLabel.Location = new Point(592, 298);
+            resultLabel.Name = "resultLabel";
+            resultLabel.Size = new Size(35, 15);
+            resultLabel.TabIndex = 1;
+            resultLabel.Text = "score";
+            resultLabel.TextAlign = ContentAlignment.MiddleCenter;
+            resultLabel.Visible = false;
+            // 
             // SpeedTest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(resultLabel);
             Controls.Add(startButton);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "SpeedTest";
             Text = "SpeedTest";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button startButton;
+        private Label resultLabel;
     }
 }
