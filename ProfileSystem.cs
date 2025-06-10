@@ -8,14 +8,14 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace EducationSystemApp {
-    internal class tempProfile { // for jsonserliazer to work, i have to use {get;set;} for some reason...
+    internal class ProfileSystem { // for jsonserliazer to work, i have to use {get;set;} for some reason...
         public int mathScore { get; set; }
         public int memoryScore { get; set; }
         public int wordScore { get; set; }
         public int speedScore { get; set; }
 
 
-        public tempProfile(int mathScore, int memoryScore, int wordScore, int speedScore) {
+        public ProfileSystem(int mathScore, int memoryScore, int wordScore, int speedScore) {
             this.mathScore = mathScore;
             this.memoryScore = memoryScore;
             this.wordScore = wordScore;
@@ -23,8 +23,11 @@ namespace EducationSystemApp {
         }
 
 
-        public static Dictionary<string, tempProfile> profiles; // name,scores
-        public static tempProfile? profile;
+
+        public static Dictionary<string, ProfileSystem> profiles = new Dictionary<string, ProfileSystem>(); // name,scores
+        public static ProfileSystem? profile;
+
+
         public static void SaveProfiles() {
             string rawProfiles = JsonSerializer.Serialize(profiles, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText("profiles.json", rawProfiles);
@@ -34,23 +37,21 @@ namespace EducationSystemApp {
         public static void LoadProfiles() {
             if (File.Exists("profiles.json")) {
                 string rawProfiles = File.ReadAllText("profiles.json");
-                profiles = JsonSerializer.Deserialize<Dictionary<string, tempProfile>>(rawProfiles)!;
+                profiles = JsonSerializer.Deserialize<Dictionary<string, ProfileSystem>>(rawProfiles)!;
             }
-            else {
-                InitProfiles();
-            }
-            profile = profiles.GetValueOrDefault("a")!;
         }
 
 
-        public static void InitProfiles() {
-            profiles = new Dictionary<string, tempProfile>() {
-                { "a", new tempProfile(1, 2, 3, 2000) },
-                { "b", new tempProfile(3, 2, 1, 1000) },
-                { "c", new tempProfile(30000, 0, 30, 400) },
-                { "d", new tempProfile(5, 6, 7, 600) },
-            };
-            profile = profiles.GetValueOrDefault("a")!;
+        public static void CreateProfile(string name) {
+            profiles[name] = new ProfileSystem(0, 0, 0, int.MaxValue);
+            SaveProfiles();
+        }
+
+
+        public static void SelectProfile(string name) {
+            if (!profiles.TryGetValue(name, out profile)) {
+                throw new NullReferenceException($"Profile with name {name} not found..?");
+            }
         }
     }
 }

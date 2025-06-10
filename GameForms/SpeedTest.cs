@@ -57,8 +57,9 @@ namespace EducationSystemApp {
             else {
                 // Calculate score
                 int speedScore = totalTime / testsDone;
-                if (speedScore < tempProfile.profile.speedScore) {
-                    tempProfile.profile.speedScore = speedScore;
+                if (speedScore < ProfileSystem.profile.speedScore) {
+                    ProfileSystem.profile.speedScore = speedScore;
+                    ProfileSystem.SaveProfiles();
                 }
                 resultLabel.Text = speedScore.ToString();
 

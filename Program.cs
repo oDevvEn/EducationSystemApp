@@ -11,8 +11,8 @@ namespace EducationSystemApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            tempProfile.LoadProfiles(); //temp
-            Application.Run(new tempMainMenu());
+            ProfileSystem.LoadProfiles();
+            Application.Run(new MainMenu());
         }
     }
 }
