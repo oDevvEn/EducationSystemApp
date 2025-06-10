@@ -160,26 +160,26 @@ namespace EducationSystemApp
                 """;
         }
 
-        private void ShowForm(Form form, bool hide) {
-            if (hide) this.Hide();
+        private void ShowForm(Form form, bool nothide) {
+            if (!nothide) this.Hide();
             form.ShowDialog();
             ShowProfileStats();
             this.Show();
         }
         private void compareProfilesButton_Click(object sender, EventArgs e) {
-            ShowForm(new ProfileComparor(), false);
+            ShowForm(new ProfileComparor(), true);
         }
         private void mathsQuizButton_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            ShowForm(new MathQuiz0(), false);
         }
         private void memoryTestButton_Click(object sender, EventArgs e) {
             throw new NotImplementedException();
         }
         private void wordQuestionsButton_Click(object sender, EventArgs e) {
-            ShowForm(new WordQuestions(), true);
+            ShowForm(new WordQuestions(), false);
         }
         private void speedTestButton_Click(object sender, EventArgs e) {
-            ShowForm(new SpeedTest(), true);
+            ShowForm(new SpeedTest(), false);
         }
     }
 }
