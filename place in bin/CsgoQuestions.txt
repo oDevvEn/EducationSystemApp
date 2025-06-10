@@ -1,0 +1,5 @@
+1. How much money do you start the game?|1000
+2. When did Csgo get released?|august212012
+3. What was counter strike originally?|mod
+4. How much does the ak cost?|2700
+5. What is the name of the cheapest sniper?|scout

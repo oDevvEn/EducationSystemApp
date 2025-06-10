@@ -176,7 +176,7 @@ namespace EducationSystemApp
             throw new NotImplementedException();
         }
         private void wordQuestionsButton_Click(object sender, EventArgs e) {
-            throw new NotImplementedException();
+            ShowForm(new WordQuestions(), true);
         }
         private void speedTestButton_Click(object sender, EventArgs e) {
             ShowForm(new SpeedTest(), true);
